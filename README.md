@@ -14,13 +14,13 @@ os.Exit(v.ExitCode())                        // only FAIL exits 1
 
 ## The states, and what each promises
 
-| State     | Promise                                             | Fails a roll-up? |
-| --------- | --------------------------------------------------- | ---------------- |
-| `PASS`    | ran, and the claim it tests holds                   | no               |
+| State     | Promise                                              | Fails a roll-up? |
+| --------- | ---------------------------------------------------- | ---------------- |
+| `PASS`    | ran, and the claim it tests holds                    | no               |
 | `FAIL`    | ran, and the claim is false — the only failing state | **yes**          |
-| `WARN`    | ran, holds, but carries debt the reader must see    | no               |
-| `SKIP`    | deliberately not evaluated here (exempt/filtered)   | no (never votes) |
-| `UNKNOWN` | cannot say — never ran, timed out, inconclusive     | no               |
+| `WARN`    | ran, holds, but carries debt the reader must see     | no               |
+| `SKIP`    | deliberately not evaluated here (exempt/filtered)    | no (never votes) |
+| `UNKNOWN` | cannot say — never ran, timed out, inconclusive      | no               |
 
 ## Roll-up (`WorstOf`)
 
@@ -37,9 +37,11 @@ Stdlib only, by contract — stdlib-only consumers (gate batteries, CLIs, nix-he
 ## Consumers
 
 Adopted:
+
 - `project-meta` doctor CI gate — the four gate categories roll up via `WorstOf` and the survey prints the typed verdict line (migrated 2026-11-21, `1e35099`; the library's first consumer, which per ADR-0001 makes it shipped)
 
 Planned (rows filed 2026-11-21):
+
 - BuildFlow findings gate (pass/warn/skip roll-up semantics)
 - monitor365 collector health roll-ups
 
