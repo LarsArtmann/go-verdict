@@ -39,10 +39,10 @@ Stdlib only, by contract — stdlib-only consumers (gate batteries, CLIs, nix-he
 Adopted:
 
 - `project-meta` doctor CI gate — the four gate categories roll up via `WorstOf` and the survey prints the typed verdict line (migrated 2026-11-21, `1e35099`; the library's first consumer, which per ADR-0001 makes it shipped)
+- BuildFlow doctor survey — per-repo diagnostic statuses map onto PASS/WARN/FAIL/SKIP and the gate reads `WorstOf`; exit-code semantics identical (2026-11-21, `9a6af21ab`)
 
-Planned (rows filed 2026-11-21):
+Evaluated and honestly closed (2026-11-21):
 
-- BuildFlow findings gate (pass/warn/skip roll-up semantics)
-- monitor365 collector health roll-ups
+- monitor365 collector health — pure-Rust workspace (no Go side; its UI already has its own worst-combinator), no adoption possible
 
 Note: docs-gates CANNOT adopt (stdlib-only root-module contract — zero requires, drift-checked in CI); its battery keeps its own three-word verdict vocabulary by design.
