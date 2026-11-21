@@ -36,8 +36,10 @@ Stdlib only, by contract — stdlib-only consumers (gate batteries, CLIs, nix-he
 
 ## Consumers
 
-Planned first consumers (migration rows filed 2026-11-21, per ADR-0001 the library is not "shipped" until one lands):
-- `project-meta` doctor CI gate (missing/corrupt/collision gates → WorstOf)
+Adopted:
+- `project-meta` doctor CI gate — the four gate categories roll up via `WorstOf` and the survey prints the typed verdict line (migrated 2026-11-21, `1e35099`; the library's first consumer, which per ADR-0001 makes it shipped)
+
+Planned (rows filed 2026-11-21):
 - BuildFlow findings gate (pass/warn/skip roll-up semantics)
 - monitor365 collector health roll-ups
 
