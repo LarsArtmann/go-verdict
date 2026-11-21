@@ -36,4 +36,9 @@ Stdlib only, by contract — stdlib-only consumers (gate batteries, CLIs, nix-he
 
 ## Consumers
 
-- `docs-gates` battery matrix (first adopter, 2026-11-21)
+Planned first consumers (migration rows filed 2026-11-21, per ADR-0001 the library is not "shipped" until one lands):
+- `project-meta` doctor CI gate (missing/corrupt/collision gates → WorstOf)
+- BuildFlow findings gate (pass/warn/skip roll-up semantics)
+- monitor365 collector health roll-ups
+
+Note: docs-gates CANNOT adopt (stdlib-only root-module contract — zero requires, drift-checked in CI); its battery keeps its own three-word verdict vocabulary by design.
