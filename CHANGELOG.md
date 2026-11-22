@@ -6,12 +6,16 @@ All notable changes. Dates are 2026 unless stated.
 
 ### Added
 
-- Nothing yet.
+- BuildFlow pre-commit hook gating every commit (block and auto-fix paths verified).
+- GitHub Actions quality workflow (stdlib-only: build, vet, race tests on pushes and PRs; BuildFlow stays local-only as private tooling).
+- Runnable godoc examples (`ExampleVerdict`, `ExampleWorstOf`, `ExampleParse`).
+- FEATURES vocabulary-gate spike: statuses ⊆ own-legend check prototyped and measured; adopted upstream as Artmann-Technologies/docs-gates#11.
 
 ### Changed
 
 - `weight()`'s roll-up ranks are named constants (`rankFail` … `rankSkip`) instead of bare numbers; the `.golangci.yml` `mnd` suppression for `verdict.go` is retired. No API change.
 - `dprint.json` is no longer committed: BuildFlow generates it per host with local plugin paths (via `BUILDFLOW_DPRINT_PLUGINS`) where a vendored bundle exists, falling back to the remote first-use fetch elsewhere. Cold offline formatting runs are network-independent on bundled hosts.
+- CONTRIBUTING.md now names the checks a contributor can actually run (build, vet, race tests — the same ones CI runs) instead of hand-run golangci-lint.
 
 ### Fixed
 

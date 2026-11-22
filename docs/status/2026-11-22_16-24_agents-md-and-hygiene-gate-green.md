@@ -104,7 +104,7 @@ golangci-lint instruction).
 ~~4. Add docs/status + TODO_LIST harvest conventions to AGENTS.md.~~ h:d76c2fd
 ~~5. Decide dprint.json plugin strategy (remote fetch vs local .wasm via~~ h:56d61fa
 BUILDFLOW_DPRINT_PLUGINS).
-6. BuildFlow state-DB maintenance (VACUUM / post-purge GC; 1.09 GB state,
+~~6. BuildFlow state-DB maintenance (VACUUM / post-purge GC; 1.09 GB state,~~ v:diagnosed 2026-11-22 no bloat - retention healthy per timings --info, 0% fragmentation, oldest record 1mo; 620MB result cache purged; SQLITE_BUSY was transient concurrency
 0.60 GB cache) — host-level, also caused SQLITE_BUSY contention observed
 in three runs.
 ~~7. Decide on CI workflow vs local-only quality gate.~~ h:4e7efb9

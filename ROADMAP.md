@@ -27,6 +27,9 @@ Raw ideas:
 The type carries epistemics; rendering is a consumer concern today. A shared
 render layer only earns existence once multiple consumers duplicate one.
 
+Demand check 2026-11-22: no signal — two adopters (project-meta doctor,
+BuildFlow doctor survey), neither duplicates a render layer. Stays gated.
+
 Raw ideas:
 
 - SARIF emission for CI-native consumers

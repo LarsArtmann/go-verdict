@@ -6,15 +6,8 @@ ROADMAP.md. Harvested from docs/status/2026-11-22_16-24_agents-md-and-hygiene-ga
 
 ## Open
 
-- [ ] BuildFlow state-DB maintenance (host-level): the state DB
-      (~/.local/state/buildflow/buildflow.db) is 1.1 GB of live telemetry
-      (step_outputs + step_timings + indexes, zero free pages — VACUUM is a
-      no-op); purge the 620 MB result cache; the SQLITE_BUSY contention
-      needs a retention story upstream.
-- [ ] FEATURES-vocabulary standing-gate spike: prototype a check that every
-      FEATURES.md status comes from its own legend (the 2026-11-22 audit
-      shipped a legend gap no gate caught; surfaced as plan task P12 in
-      docs/planning/2026-11-22_pareto-execution-plan.md).
+None. Open decisions live in ROADMAP.md (none open), long-term ideas in
+ROADMAP.md themes.
 
 ## Watch items (not tasks)
 

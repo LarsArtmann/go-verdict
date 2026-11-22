@@ -98,7 +98,7 @@ blind spot); uncommitted work is the single largest risk right now.
 ~~5. Align CONTRIBUTING.md with BuildFlow ownership.~~ h:324f200
 ~~6. Add godoc `ExampleWorstOf`.~~ h:324f200
 ~~7. `buildflow precommit install`.~~ h:a9dc57c
-8. BuildFlow state-DB VACUUM (host-level; SQLITE_BUSY observed 3+ times).
+~~8. BuildFlow state-DB VACUUM (host-level; SQLITE_BUSY observed 3+ times).~~ v:diagnosed 2026-11-22 no bloat - retention healthy per timings --info, 0% fragmentation, oldest record 1mo; 620MB result cache purged; SQLITE_BUSY was transient concurrency
 ~~9. Cut next release: fold `[Unreleased]`, tag (go-release skill).~~ h:9545aed
 ~~10. Verify pkg.go.dev rendering after the tag.~~ v:pkg.go.dev lists v0.1.1 2026-11-22; docs body withheld by license policy, owner-ruled accurate
 ~~11. Quarterly consumer-ledger re-verification at source repos.~~ v:re-verified at both sources 2026-11-22; next check 2027-02-22 TODO watch item
