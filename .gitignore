@@ -54,3 +54,7 @@ go.work
 go.work.sum
 /go-verdict
 # <<< buildflow-managed (.gitignore) <<<
+
+# dprint.json is generated per host by buildflow (local plugin paths where
+# BUILDFLOW_DPRINT_PLUGINS names a bundle, remote URLs otherwise)
+dprint.json

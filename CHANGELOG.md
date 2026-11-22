@@ -11,6 +11,7 @@ All notable changes. Dates are 2026 unless stated.
 ### Changed
 
 - `weight()`'s roll-up ranks are named constants (`rankFail` … `rankSkip`) instead of bare numbers; the `.golangci.yml` `mnd` suppression for `verdict.go` is retired. No API change.
+- `dprint.json` is no longer committed: BuildFlow generates it per host with local plugin paths (via `BUILDFLOW_DPRINT_PLUGINS`) where a vendored bundle exists, falling back to the remote first-use fetch elsewhere. Cold offline formatting runs are network-independent on bundled hosts.
 
 ### Fixed
 
