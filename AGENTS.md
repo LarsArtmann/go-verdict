@@ -45,6 +45,11 @@ parallel suites: every row documents a decision a consumer depends on.
   configures an EXISTING file, so seed one first if it is ever deleted).
   A green run can still exit non-zero when error-severity findings remain;
   read the findings section, not just the exit code.
+- A BuildFlow pre-commit hook gates every commit (`buildflow precommit
+  install`; lives in `.git/hooks/pre-commit`): buildflow pre-commit mode on
+  staged files — auto-formats and re-stages fixable findings, blocks the
+  commit on unfixable ones (~3 s here). Uninstall with
+  `buildflow precommit uninstall`.
 - `go test ./... -race` — the test suite (also the documented contributor
   check, per CONTRIBUTING.md).
 - No flake.nix — deliberate ("nix-hermetic by triviality", STACK.md). No
@@ -115,7 +120,11 @@ Check here before "fixing" what a linter reports:
 ## Gotchas
 
 - An auto-git commit daemon runs continuously; expect commits you did not
-  make, and verify state with `git status` before assuming.
+  make, and verify state with `git status` before assuming. The pre-commit
+  hook gates the daemon's commits too: a blocked daemon commit leaves the
+  changes in the working tree, and formatter repairs the hook makes can
+  surface inside daemon commits with generic messages — verify with
+  `git log --stat` before trusting one.
 - `reports/` is a gitignored scratch dir (coverage output) — never commit it.
 - Releases: annotated tag per the `go-release` skill; fold CHANGELOG's
   `[Unreleased]` section into the version section when cutting.
