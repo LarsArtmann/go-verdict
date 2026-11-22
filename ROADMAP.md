@@ -15,8 +15,10 @@ Raw ideas:
 
 - Migrate the remaining hand-rolled verdict vocabularies across the fleet
   (consumer ledger lives in README.md)
-- Re-run the domain-language census as adoption grows, to catch duplicate
-  glossaries and near-synonyms the migrations leave behind
+- Re-run the domain-language census once the README consumer ledger
+  reaches five adopters (two today: project-meta doctor, BuildFlow doctor
+  survey), to catch duplicate glossaries and near-synonyms the migrations
+  leave behind
 - Quarterly re-verification of the README consumer ledger claims at their
   source repos
 

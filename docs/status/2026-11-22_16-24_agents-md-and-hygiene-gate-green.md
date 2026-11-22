@@ -94,29 +94,29 @@ is from this session's own runs and observations; nothing else was researched.
 
 ## f) Next things (ranked, from this session's observations only)
 
-1. Commit the session's five files once owner approves (README, AGENTS.md,
-   TODO_LIST.md, .golangci.yml, STACK.md) — auto-commit daemon had not
-   committed as of 16:25.
-2. Owner verdict on the two curated golangci suppressions (keep vs refactor
-   weight() to named rank constants and drop the mnd entry).
-3. Align CONTRIBUTING.md with BuildFlow ownership (replace hand-run
-   golangci-lint instruction).
-4. Add docs/status + TODO_LIST harvest conventions to AGENTS.md.
-5. Decide dprint.json plugin strategy (remote fetch vs local .wasm via
-   BUILDFLOW_DPRINT_PLUGINS).
+~~1. Commit the session's five files once owner approves (README, AGENTS.md,~~ h:d76c2fd, d6bb0e9
+TODO_LIST.md, .golangci.yml, STACK.md) — auto-commit daemon had not
+committed as of 16:25.
+~~2. Owner verdict on the two curated golangci suppressions (keep vs refactor~~ h:945e6be
+weight() to named rank constants and drop the mnd entry).
+~~3. Align CONTRIBUTING.md with BuildFlow ownership (replace hand-run~~ h:324f200
+golangci-lint instruction).
+~~4. Add docs/status + TODO_LIST harvest conventions to AGENTS.md.~~ h:d76c2fd
+~~5. Decide dprint.json plugin strategy (remote fetch vs local .wasm via~~ h:56d61fa
+BUILDFLOW_DPRINT_PLUGINS).
 6. BuildFlow state-DB maintenance (VACUUM / post-purge GC; 1.09 GB state,
-   0.60 GB cache) — host-level, also caused SQLITE_BUSY contention observed
-   in three runs.
-7. Decide on CI workflow vs local-only quality gate.
-8. `buildflow precommit install`.
-9. Cut CHANGELOG section at next release for: AGENTS.md/TODO_LIST.md,
-   .golangci.yml, README install section, STACK.md wiring-order fix.
-10. Verify pkg.go.dev renders package docs after the next tag.
-11. Consider a godoc `ExampleWorstOf` example function (nice-to-have).
-12. Re-verify consumer ledger claims (project-meta `1e35099`, BuildFlow
-    `9a6af21ab`) next quarter.
-13. Re-check the census-digest duplicate-glossary picture once more repos
-    adopt the library (README claims ~14 hand-rolled predecessors).
+0.60 GB cache) — host-level, also caused SQLITE_BUSY contention observed
+in three runs.
+~~7. Decide on CI workflow vs local-only quality gate.~~ h:4e7efb9
+~~8. `buildflow precommit install`.~~ h:a9dc57c
+~~9. Cut CHANGELOG section at next release for: AGENTS.md/TODO_LIST.md,~~ h:9545aed
+.golangci.yml, README install section, STACK.md wiring-order fix.
+~~10. Verify pkg.go.dev renders package docs after the next tag.~~ v:pkg.go.dev lists v0.1.1 2026-11-22; docs body withheld by license policy, owner-ruled accurate
+~~11. Consider a godoc `ExampleWorstOf` example function (nice-to-have).~~ h:324f200
+~~12. Re-verify consumer ledger claims (project-meta `1e35099`, BuildFlow~~ v:re-verified at both sources 2026-11-22; next check 2027-02-22 TODO watch item
+`9a6af21ab`) next quarter.
+~~13. Re-check the census-digest duplicate-glossary picture once more repos~~ r:census re-run trigger defined in ROADMAP five adopters
+adopt the library (README claims ~14 hand-rolled predecessors).
 
 ## g) Questions I cannot answer myself
 

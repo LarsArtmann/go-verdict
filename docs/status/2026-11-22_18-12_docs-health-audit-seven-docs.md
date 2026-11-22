@@ -88,24 +88,24 @@
 
 ## f) Next things (from this session's observations)
 
-1. Owner answers the three open questions (see g) — they gate most of the rest.
-2. Commit the ten-file work set (README, STACK, CHANGELOG, AGENTS, TODO_LIST,
-   FEATURES, ROADMAP, docs/DOMAIN_LANGUAGE.md, .golangci.yml, plus the two
-   reports) — the auto-commit daemon has NOT committed in 3+ hours (known
-   blind spot); uncommitted work is the single largest risk right now.
-3. Suppressions verdict → keep or refactor weight() and drop the mnd entry.
-4. dprint plugin strategy → act on the decision.
-5. Align CONTRIBUTING.md with BuildFlow ownership.
-6. Add godoc `ExampleWorstOf`.
-7. `buildflow precommit install`.
+~~1. Owner answers the three open questions (see g) — they gate most of the rest.~~ h:4e7efb9
+~~2. Commit the ten-file work set (README, STACK, CHANGELOG, AGENTS, TODO_LIST,~~ h:d76c2fd, d6bb0e9, 074d385
+FEATURES, ROADMAP, docs/DOMAIN_LANGUAGE.md, .golangci.yml, plus the two
+reports) — the auto-commit daemon has NOT committed in 3+ hours (known
+blind spot); uncommitted work is the single largest risk right now.
+~~3. Suppressions verdict → keep or refactor weight() and drop the mnd entry.~~ h:945e6be
+~~4. dprint plugin strategy → act on the decision.~~ h:56d61fa
+~~5. Align CONTRIBUTING.md with BuildFlow ownership.~~ h:324f200
+~~6. Add godoc `ExampleWorstOf`.~~ h:324f200
+~~7. `buildflow precommit install`.~~ h:a9dc57c
 8. BuildFlow state-DB VACUUM (host-level; SQLITE_BUSY observed 3+ times).
-9. Cut next release: fold `[Unreleased]`, tag (go-release skill).
-10. Verify pkg.go.dev rendering after the tag.
-11. Quarterly consumer-ledger re-verification at source repos.
-12. Census re-run as adoption grows (ROADMAP).
-13. CI-workflow decision (ROADMAP Open question).
-14. When reports accumulate, consider a docs/status README index (the
-    live-index-rot check has nothing to bite on with one report).
+~~9. Cut next release: fold `[Unreleased]`, tag (go-release skill).~~ h:9545aed
+~~10. Verify pkg.go.dev rendering after the tag.~~ v:pkg.go.dev lists v0.1.1 2026-11-22; docs body withheld by license policy, owner-ruled accurate
+~~11. Quarterly consumer-ledger re-verification at source repos.~~ v:re-verified at both sources 2026-11-22; next check 2027-02-22 TODO watch item
+~~12. Census re-run as adoption grows (ROADMAP).~~ r:trigger defined in ROADMAP five adopters
+~~13. CI-workflow decision (ROADMAP Open question).~~ h:4e7efb9
+~~14. When reports accumulate, consider a docs/status README index (the~~ r:index threshold defined in TODO watch three reports
+live-index-rot check has nothing to bite on with one report).
 
 ## g) Questions I cannot answer myself
 

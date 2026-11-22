@@ -6,18 +6,11 @@ ROADMAP.md. Harvested from docs/status/2026-11-22_16-24_agents-md-and-hygiene-ga
 
 ## Open
 
-- [ ] Align CONTRIBUTING.md with BuildFlow ownership: it tells contributors to
-      hand-run `golangci-lint run ./...` (CONTRIBUTING.md:17), which BuildFlow
-      owns now.
-- [ ] Add a godoc `ExampleWorstOf` example function (godoc shows no runnable
-      example today).
-- [ ] `buildflow precommit install` — install the pre-commit quality hook
-      (none exists).
-- [ ] BuildFlow state-DB maintenance (host-level): VACUUM
-      ~/.local/state/buildflow/buildflow.db (1.09 GB; cache 0.60 GB) — also the
-      cause of SQLITE_BUSY contention observed in three runs.
-- [ ] Cut the next release: fold CHANGELOG `[Unreleased]` into a version
-      section and tag (go-release skill).
+- [ ] BuildFlow state-DB maintenance (host-level): the state DB
+      (~/.local/state/buildflow/buildflow.db) is 1.1 GB of live telemetry
+      (step_outputs + step_timings + indexes, zero free pages — VACUUM is a
+      no-op); purge the 620 MB result cache; the SQLITE_BUSY contention
+      needs a retention story upstream.
 - [ ] FEATURES-vocabulary standing-gate spike: prototype a check that every
       FEATURES.md status comes from its own legend (the 2026-11-22 audit
       shipped a legend gap no gate caught; surfaced as plan task P12 in
@@ -25,10 +18,12 @@ ROADMAP.md. Harvested from docs/status/2026-11-22_16-24_agents-md-and-hygiene-ga
 
 ## Watch items (not tasks)
 
-- Verify pkg.go.dev renders the package doc after the next tag.
-- Re-verify the README consumer ledger claims at their source repos next
-  quarter (project-meta `1e35099` and BuildFlow `9a6af21` both verified
+- Re-verify the README consumer ledger claims at their source repos by
+  2027-02-22 (project-meta `1e35099` → cmd/meta/cmd_doctor.go and BuildFlow
+  `9a6af21` → internal/cli/doctor_survey_verdict.go, both verified
   2026-11-22).
+- When docs/status reaches three reports, add an index page for it (two
+  reports today).
 - Revisit trigger from STACK.md: a render/SARIF layer growing past ~200 LOC
   outgrows the stdlib-only foundation decision — re-derive the stack before
   building it.
