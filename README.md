@@ -1,6 +1,6 @@
 # go-verdict
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-orange.svg)](LICENSE)
 
 The fleet's typed epistemic status: five states, one worst-of roll-up, one render grammar — extracted once from the ~14 dashboards and gate batteries that hand-rolled it (2026-11-21 domain-language census).
 
@@ -10,6 +10,12 @@ import "github.com/larsartmann/go-verdict"
 v := verdict.WorstOf(gateFreshness, gateStub, gateCitations)
 fmt.Printf("%s battery: %s\n", v.Icon(), v) // "✓ battery: PASS" / "✗ battery: FAIL" / ...
 os.Exit(v.ExitCode())                        // only FAIL exits 1
+```
+
+## Installation
+
+```
+go get github.com/larsartmann/go-verdict
 ```
 
 ## The states, and what each promises
