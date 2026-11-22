@@ -45,10 +45,9 @@ Raw ideas:
 
 ## Open questions
 
-- Keep the two curated golangci suppressions in `.golangci.yml`, or refactor
-  `weight()` to named rank constants and drop the `mnd` entry? (Owner taste;
-  suppressions documented in AGENTS.md.)
-- dprint.json plugin strategy: accept the remote .wasm first-use fetch, or
-  switch to locally provisioned plugins (`BUILDFLOW_DPRINT_PLUGINS`)?
-- CI workflow vs local-only quality gate — the BuildFlow gate runs locally;
-  is a GitHub Actions equivalent wanted?
+None currently open. The three standing questions were decided on
+2026-11-22 and executed: the golangci suppressions question was resolved by
+naming `weight()`'s roll-up ranks (retiring the `mnd` suppression); dprint
+plugins are provisioned locally (`BUILDFLOW_DPRINT_PLUGINS`, generated
+`dprint.json`); CI is a stdlib-only GitHub Actions workflow (private
+BuildFlow cannot run on public runners).

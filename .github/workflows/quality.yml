@@ -1,0 +1,27 @@
+# CI runs the stdlib-only checks a public consumer can run: build, vet,
+# race tests against the published module. BuildFlow (lint, formatting,
+# docs gates) stays local-only: its repo is private, so a public runner
+# cannot fetch it, and duplicating its lint config here would create two
+# sources of truth for "is this repo clean". The pre-commit hook enforces
+# the full gate on every commit.
+name: Quality
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-go@d8cbb8045d7f43706b9177cceb36c1f91a6644d5 # v7.1.0
+        with:
+          go-version-file: go.mod
+      - run: go build ./...
+      - run: go vet ./...
+      - run: go test ./... -race -count=1

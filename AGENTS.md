@@ -52,6 +52,12 @@ parallel suites: every row documents a decision a consumer depends on.
   `buildflow precommit uninstall`.
 - `go test ./... -race` — the test suite (also the documented contributor
   check, per CONTRIBUTING.md).
+- CI (`.github/workflows/quality.yml`) runs the stdlib checks a public
+  consumer can run — `go build`, `go vet`, `go test -race` — on pushes and
+  PRs. BuildFlow and docs-gates stay local-only by design: their repos are
+  private, so a public runner cannot fetch them, and duplicating their
+  configs in CI would create a second source of truth. The pre-commit hook
+  carries the full gate on every commit.
 - No flake.nix — deliberate ("nix-hermetic by triviality", STACK.md). No
   Makefile, no justfile.
 
