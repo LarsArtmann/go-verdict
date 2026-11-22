@@ -11,10 +11,16 @@ Thanks for your interest in contributing!
 
 ## Development Setup
 
-Run the following commands to set up your development environment:
+Go 1.27+ is the only requirement:
 
+    go build ./...
+    go vet ./...
     go test ./... -race
-    golangci-lint run ./...
+
+CI runs the same checks on every pull request. Formatting and lint policy
+is enforced by the maintainer's BuildFlow gate at merge time; match the
+style of the surrounding code, and extend the existing test tables rather
+than adding parallel suites.
 
 ## Reporting Issues
 

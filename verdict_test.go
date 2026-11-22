@@ -1,6 +1,9 @@
 package verdict
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestParseCaseInsensitiveAndUnknown(t *testing.T) {
 	t.Parallel()
@@ -93,4 +96,25 @@ func TestStateSetIsClosed(t *testing.T) {
 			t.Errorf("%q must be Valid", v)
 		}
 	}
+}
+
+func ExampleVerdict() {
+	v := Parse("pass")
+	fmt.Println(v, v.Icon(), v.ExitCode())
+	// Output: PASS ✓ 0
+}
+
+func ExampleWorstOf() {
+	fmt.Println(WorstOf(Pass, Warn, Skip))
+	fmt.Println(WorstOf(Pass, Unknown))
+	fmt.Println(WorstOf())
+	// Output:
+	// WARN
+	// UNKNOWN
+	// UNKNOWN
+}
+
+func ExampleParse() {
+	fmt.Println(Parse("PASS"), Parse("passed"), Parse("  fail "))
+	// Output: PASS UNKNOWN FAIL
 }
