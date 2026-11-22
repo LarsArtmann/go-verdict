@@ -6,10 +6,6 @@ ROADMAP.md. Harvested from docs/status/2026-11-22_16-24_agents-md-and-hygiene-ga
 
 ## Open
 
-- [ ] Commit the session's docs/hygiene work once the owner says the word
-      (STACK.md, CHANGELOG.md, AGENTS.md, TODO_LIST.md, FEATURES.md, ROADMAP.md,
-      docs/DOMAIN_LANGUAGE.md, .golangci.yml, docs/status/ — README.md already
-      landed via 75da552).
 - [ ] Align CONTRIBUTING.md with BuildFlow ownership: it tells contributors to
       hand-run `golangci-lint run ./...` (CONTRIBUTING.md:17), which BuildFlow
       owns now.
