@@ -29,4 +29,4 @@ Decision record per the stack-selection skill. Profile-driven; re-derive before 
 ## Wiring order
 
 1. `meta set --project go-verdict` (registered 2026-11-21)
-2. First consumer: docs-gates battery matrix (ADR-0001 adoption — the library is not "shipped" until a consumer migrated)
+2. First consumer: project-meta doctor CI gate (migrated 2026-11-21, `1e35099`) — the planned first consumer docs-gates turned out contract-blocked (its own stdlib-only root-module forbids the import); per ADR-0001 the project-meta migration is what makes the library shipped
