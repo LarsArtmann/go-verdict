@@ -8,6 +8,10 @@ All notable changes. Dates are 2026 unless stated.
 
 - Nothing yet.
 
+### Changed
+
+- `weight()`'s roll-up ranks are named constants (`rankFail` … `rankSkip`) instead of bare numbers; the `.golangci.yml` `mnd` suppression for `verdict.go` is retired. No API change.
+
 ### Fixed
 
 - Nothing yet.

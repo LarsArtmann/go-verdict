@@ -152,7 +152,6 @@ linters:
     mnd:
       ignored-files:
         - _test\.go
-        - verdict\.go
     nestif:
       min-complexity: 6
     revive:

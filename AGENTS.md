@@ -104,12 +104,11 @@ Check here before "fixing" what a linter reports:
 
 - go-structure-linter's `internal-directory` warning is a deliberate
   non-fix: a single-file public library lives at the module root, full stop.
-- The two hand-curated suppressions in `.golangci.yml` are policy, not debt:
-  `mnd` ignores `verdict\.go` (weight()'s switch returns are the roll-up
-  rank table, not magic numbers), and the `mapKey` exclusion for `_test.go`
-  exists because the whitespace in the `"  Fail "` test key IS the test —
-  Parse trims it. Auto-configure preserves curated rows; do not "clean
-  them up".
+- The hand-curated `mapKey` exclusion in `.golangci.yml` (gocritic,
+  `_test.go`) is policy, not debt: the whitespace in the `"  Fail "`
+  test key IS the test — Parse trims it. An earlier companion suppression
+  (`mnd` on `verdict.go`) was retired once `weight()`'s ranks became named
+  constants. Auto-configure preserves curated rows; do not "clean them up".
 - docs-gates (the battery tool) CANNOT adopt this library: it is itself
   stdlib-only by root-module contract and keeps its own three-word verdict
   vocabulary by design. Do not file adoption work for it; same for monitor365

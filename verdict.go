@@ -45,23 +45,34 @@ const (
 	Unknown Verdict = "UNKNOWN"
 )
 
+// Roll-up ranks: higher outranks in WorstOf. Skip carries the lowest
+// rank because Skips never vote; unrecognized verdicts roll up at
+// Unknown's rank — unmeasured is not passing.
+const (
+	rankFail    = 5
+	rankWarn    = 4
+	rankUnknown = 3
+	rankPass    = 2
+	rankSkip    = 1
+)
+
 // weight is the roll-up rank. Higher outranks; Skip does not vote
-// (represented as the lowest weight and skipped in WorstOf).
+// (lowest rank, dropped in WorstOf).
 func (v Verdict) weight() int {
 	switch v {
 	case Fail:
-		return 5
+		return rankFail
 	case Warn:
-		return 4
+		return rankWarn
 	case Unknown:
-		return 3
+		return rankUnknown
 	case Pass:
-		return 2
+		return rankPass
 	case Skip:
-		return 1
+		return rankSkip
 	}
 
-	return 3 // unrecognized verdicts carry Unknown's weight: unmeasured
+	return rankUnknown
 }
 
 // Valid reports whether v is one of the five defined states.
