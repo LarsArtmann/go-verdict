@@ -48,6 +48,13 @@ Raw ideas:
   stdlib-only consumers adopt without a dependency discussion.
 - **A CLI or service:** pure library; wrapping CLIs live in their consumers.
 
+## Raw ideas (unrouted)
+
+- PR/issue templates in `.github/` — worth it once external contribution
+  actually happens, not before.
+- Version badge in README (license badge exists today; no released-version
+  badge).
+
 ## Open questions
 
 None currently open. The three standing questions were decided on
